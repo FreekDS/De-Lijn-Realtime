@@ -190,5 +190,15 @@ Example URL: 127.0.0.1:5000/vehicles/1/32/HEEN
 
 ## Used tools
 #### Back-end
-
+* [De Lijn API](https://data.delijn.be/) for the bus and tram data
+* [TomTom Routing API](https://developer.tomtom.com/routing-api) for routing
+* [OpenWeatherMap](https://reactjs.org/) for the weather data
+* [Flask Restful](https://flask-restful.readthedocs.io/en/latest/) to create the rest API.
+* [Flask Cors](https://flask-cors.readthedocs.io/en/latest/) to configure CORS on the API
 #### Front-end
+* [Leaflet](https://leafletjs.com/) for map creation
+* [Leaflet Routing Machine](https://www.liedman.net/leaflet-routing-machine/) for route calculation and display
+* [LRM TomTom](https://github.com/mrohnstock/lrm-tomtom) package to use TomTom api with leaflet routing machine
+* [Axios](https://github.com/axios/axios) for http requests
+* [React](https://reactjs.org/) core framework used for the front end
+* [OpenStreetMap data](https://openstreetmap.org) data used to display the Leaflet map
