@@ -210,12 +210,22 @@ Example URL: 127.0.0.1:5000/vehicles/1/32/HEEN
 
 
 ## Design choices
+#### Back-end
+The back-end was written in Python using the Flask framework. This was mandatory in the assignment so this was an obvious choice. The back-end server makes use of three external API's: one for the data of De Lijn, one for the weather, and one for routing. The API of De Lijn was obligated. <br>
+For the weather API, I chose OpenWeatherMap. This webservices uses open data, a concept I really like and want to use. Furthermore, this service offered the most free API calls per day and the service is easy to use. <br>
+For the routing part of this application, I chose for the TomTom Routing API. First, I tried to use OSRM. This was however not the best option. The free service of OSRM is based on their demo server. This server was not reliable at all and sometimes didn't even return data. The only way to use this service, was buying or creating your own server. That's why I started looking for better alternatives. I found out TomTom provided the best service for routing with a fairly large amount of API calls per day.
+
+#### Front-end
+The front-end is completely decoupled from the back-end. To demonstrate this, I didn't use Flask again for the front-end part, but I chose for a completely different framework. I picked the ReactJS framework because I already gained some experience with this last summer. I find it much cleaner to use a component based system instead of writing massive HTML and javascript files. Each component kind of stands on its own and this gives in my opinion a way better overview over the code. <br>
+The requests in the front-end are done by a library called Axios. This is a promise based HTTP client. I picked this library because, once again, I gained some experience with it last summer. I think Axios makes creating requests for webservers quite easy. <br>
+The map is created using LeafletJS. This library makes it very easy to add an OpenStreetMap based map to your webapplication. The documentation of this library is very useful and the library is straightforward to use. Things as markers and popups require not that much work. I also used the Leaflet-Routing-Machine extension. This Leaflet extension makes it easier to draw routes on your map. <br>
+Lastly, I used Bootstrap 4 to help with the CSS of this application. We used Bootstrap in a project last year, so this accelerated the development of the webservice.
 
 ## Used tools
 #### Back-end
 * [De Lijn API](https://data.delijn.be/) for the bus and tram data
 * [TomTom Routing API](https://developer.tomtom.com/routing-api) for routing
-* [OpenWeatherMap](https://reactjs.org/) for the weather data
+* [OpenWeatherMap](https://openweathermap.org/) for the weather data
 * [Flask Restful](https://flask-restful.readthedocs.io/en/latest/) to create the rest API.
 * [Flask Cors](https://flask-cors.readthedocs.io/en/latest/) to configure CORS on the API
 #### Front-end
