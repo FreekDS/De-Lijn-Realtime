@@ -1,5 +1,15 @@
 # De-Lijn-Realtime
-###### Freek De Sagher S0171876
+###### By Freek De Sagher S0171876
+
+## Contents
+1. [Installation](#installation)
+    1. [Back end](#back-end)
+    2. [Front end](#front-end)
+2. [Configuration](#configuration)
+3. [API structure](#api-structure)
+4. [Design choices](#design-choices)
+5. [Used Tools](#used-tools)
+
 
 ## Installation
 #### Back-end
@@ -23,6 +33,8 @@ To start the development server run
 > npm run start
 
 By default, the front end server will start on 127.0.0.1:3000
+
+## Configuration
 
 ## API Structure
 In this section, all the possible API can be found.
