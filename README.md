@@ -37,7 +37,12 @@ By default, the front end server will start on 127.0.0.1:3000
 ## Configuration
 The back- and front-end both have a configuration file to set some global variables.
 #### Back-end
-TODO
+The back-end configuration file can be found in the WebServices directory and is called config.py. This configuration file has three entries:
+> DE_LIJN_API_KEY: the API key used for requests to the service of De Lijn
+<!-- -->
+> WEATHER_API_KEY: the API key used for requests to the weather service
+<!-- -->
+> TOMTOM_API_KEY: the API key used for requests to the TomTom Routing API.
 
 #### Front-end
 The configuration file config.jsx can be found in the source folder in the webservices-front directory. This configuration file has three entries:
