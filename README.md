@@ -27,7 +27,7 @@ By default, the front end server will start on 127.0.0.1:3000
 ## API Structure
 In this section, all the possible API can be found.
 
-##### Error structure
+### Error structure
 Sometimes exceptions can occur (De Lijn API doesn't always return things, max calls exceeded...). An http error will be thrown with the following structure
 ```
 {
@@ -36,7 +36,7 @@ Sometimes exceptions can occur (De Lijn API doesn't always return things, max ca
 }
 ```
 
-##### GET /entities
+### GET /entities
 Get all the entities of De Lijn. Each returned entity has a number (the identifier of the entity) and a description.
 If the function succeeds, the response code will be 200. 
 ```
@@ -50,7 +50,7 @@ Example URL: 127.0.0.1:5000/entities
 ]
 ```
 
-##### GET /lines
+### GET /lines
 Get all lines of De Lijn. Each line has a number, an entity number (for example 1 = Antwerp), a description, a type ("tram" or "bus") and a service type. If the function succeeds, the response code will be 200.
 ```
 Example URL: 127.0.0.1:5000/lines
@@ -66,7 +66,7 @@ Example URL: 127.0.0.1:5000/lines
 ]
 ```
 
-##### GET /villages
+### GET /villages
 Get all villages of De Lijn. Each village has an id and a name. If this function succeeds, the response code will be 200.
 ```
 Example URL: 127.0.0.1:5000/villages
@@ -87,7 +87,7 @@ Example URL: 127.0.0.1:5000/villages
     ...
 ]
 ```
-##### GET /stops
+### GET /stops
 Get all tram and bus stops of De Lijn. This function takes a lot of time (~40 seconds). If the function succeeds, the response code will be 200.
 ```
 Example URL: 127.0.0.1:5000/stops
@@ -105,7 +105,7 @@ Example URL: 127.0.0.1:5000/stops
 ]
 ```
 
-##### GET /lines/{entity_number}/{line_number}/{direction} 
+### GET /lines/{entity_number}/{line_number}/{direction} 
 This function returns all stops of a certain line. <br>
 <b>Parameters</b>
 * entity_number: positive integer; represents the entities of De Lijn. The accepted numbers are \[1, 5\]
@@ -139,7 +139,7 @@ Example URL: 127.0.0.1:5000/lines/1/253/HEEN
 ]
 ```
 
-##### GET /weather/{latitude}/{longitude} 
+### GET /weather/{latitude}/{longitude} 
 Get the weather of a certain geolocation. <br>
 <b>Parameters</b>
 * latitude: positive float; the latitude of the geolocation.
@@ -164,7 +164,7 @@ Example URL: 127.0.0.1:5000/weather/51.4/4.4
 }
 ```
 
-##### GET /vehicles/{entity_number}/{line_number}/{direction} 
+### GET /vehicles/{entity_number}/{line_number}/{direction} 
 Get the geo locations of the vehicles of a certain line. <br>
 <b>Parameters</b>
 * entity_number: positive integer
