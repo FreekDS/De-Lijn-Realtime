@@ -59,7 +59,8 @@ In this section, all the possible API can be found.
 Sometimes exceptions can occur (De Lijn API doesn't always return things, max calls exceeded...). An http error will be thrown with the following structure
 ```
 {
-    "message": "message",
+    "message": "message" ('Not Found' for example),
+    "error": "additional error message",
     "status": 404 (for example)
 }
 ```
