@@ -2,14 +2,11 @@ import http.client, urllib.request, urllib.parse, urllib.error, base64
 import json
 from flask_restful import abort
 from typing import List
+from config import DE_LIJN_API_KEY, WEATHER_API_KEY, TOMTOM_API_KEY
 
 headers = {
-    'Ocp-Apim-Subscription-Key': 'd4be28290b3640038a922b3495fccf9f'
+    'Ocp-Apim-Subscription-Key': DE_LIJN_API_KEY
 }
-
-weather_api_key = "3f1f5a7f3554631aa4985481d5fae4c1"
-tomtom_api_key = "1i2x6wIEKnvHwA2yJolqU6bjssjdPWxV"
-
 
 # TODO Documentation
 
@@ -62,7 +59,7 @@ def make_weather_request(lat, lon):
     try:
         conn = http.client.HTTPSConnection("api.openweathermap.org")
 
-        url = "/data/2.5/weather?lat={}&lon={}&appid={}&units=metric".format(lat, lon, weather_api_key)
+        url = "/data/2.5/weather?lat={}&lon={}&appid={}&units=metric".format(lat, lon, WEATHER_API_KEY)
         conn.request("GET", url)
         resp = conn.getresponse()
         data = resp.read()
@@ -77,7 +74,7 @@ def make_tomtom_request(lat1, lon1, lat2, lon2):
     try:
         conn = http.client.HTTPSConnection("api.tomtom.com")
         latlon = "{},{}:{},{}".format(lat1, lon1, lat2, lon2)
-        url = "/routing/1/calculateRoute/{}/json?key={}&travelMode=bus".format(latlon, tomtom_api_key)
+        url = "/routing/1/calculateRoute/{}/json?key={}&travelMode=bus".format(latlon, TOMTOM_API_KEY)
         conn.request("GET", url)
         resp = conn.getresponse()
         data = resp.read()

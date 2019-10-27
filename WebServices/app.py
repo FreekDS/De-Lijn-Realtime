@@ -35,6 +35,11 @@ class GetEntities(Resource):
 
     @staticmethod
     def format_data(raw):
+        """
+        Formats the data in a useful format.
+        :param raw: raw input data
+        :return: formatted version of the data, List object
+        """
         entities = list()
         for raw_entity in raw:
             entity = dict()
@@ -481,9 +486,7 @@ api.add_resource(GetStopsOfLine, "/lines/<entity_number>/<line_number>/<directio
 api.add_resource(WeatherChecker, "/weather/<lat>/<lon>")
 api.add_resource(GetVehicleLocations, "/vehicles/<entity_number>/<line_number>/<direction>")
 
-# TODO check error handling
-# TODO testing
-# TODO update documentation
+# TODO 404 page
 
 if __name__ == '__main__':
     app.run(debug=True)
