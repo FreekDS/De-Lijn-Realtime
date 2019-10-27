@@ -35,6 +35,17 @@ To start the development server run
 By default, the front end server will start on 127.0.0.1:3000
 
 ## Configuration
+The back- and front-end both have a configuration file to set some global variables.
+#### Back-end
+TODO
+
+#### Front-end
+The configuration file config.jsx can be found in the source folder in the webservices-front directory. This configuration file has three entries:
+> API_BASE: the base url of the API. The default example is 127.0.0.1:5000. Change this if the address of the API changes.
+<!-- -->
+> INTERVAL: the time between an API call that updates the vehicle locations. The time is in milliseconds. Default value is 10000.
+<!-- -->
+> TOMTOM_API_KEY: the API key for the TomTom routing API.
 
 ## API Structure
 In this section, all the possible API can be found.
@@ -214,3 +225,5 @@ Example URL: 127.0.0.1:5000/vehicles/1/32/HEEN
 * [Axios](https://github.com/axios/axios) for http requests
 * [React](https://reactjs.org/) core framework used for the front end
 * [OpenStreetMap data](https://openstreetmap.org) data used to display the Leaflet map
+* [Bootstrap 4](https://getbootstrap.com/) for easier CSS
+* [JQuery](https://jquery.com/) needed for Bootstrap
