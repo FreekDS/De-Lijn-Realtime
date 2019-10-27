@@ -1,0 +1,31 @@
+{% extends "APIBASE.html" %}
+{% set id = "weather" %}
+{% block URL %}
+/weather/{latitude}/{longitude}
+{% endblock %}
+{% block description %}
+    Get the weather of a certain geolocation. <br>
+    <b>Parameters</b>
+    <ul>
+        <li>latitude: positive float</li>
+        <li>longtitude: positive float</li>
+    </ul>
+    <b>Return types</b>
+    <ul>
+        <li>clouds: percentage</li>
+        <li>humidity: percentage</li>
+        <li>windspeed: float in m/s</li>
+        <li>temp: float in Celsius</li>
+    </ul>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+URL: /weather/51.4/4.4
+{
+    "clouds": 88,
+    "humidity": 58,
+    "windspeed": 8.92,
+    "desc": "overcast clouds",
+    "temp": 18.76
+}
+{% endblock %}

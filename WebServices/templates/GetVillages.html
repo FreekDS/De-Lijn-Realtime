@@ -1,0 +1,27 @@
+{% extends "APIBASE.html" %}
+{% set id = "getVillages" %}
+{% block URL %}
+    /villages
+{% endblock %}
+{% block description %}
+    Will return all possible villages.<br>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+[
+    ...
+    {
+        "id": 553,
+        "name": "Sint-Katelijne-Waver"
+    },
+    {
+        "id": 554,
+        "name": "Oppuurs"
+    },
+    {
+        "id": 555,
+        "name": "Sint-Amands"
+    },
+    ...
+]
+{% endblock %}

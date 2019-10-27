@@ -1,0 +1,28 @@
+{% extends "APIBASE.html" %}
+{% set id = "vehicles" %}
+{% block URL %}
+/vehicles/{entity_number}/{line_number}/{direction}
+{% endblock %}
+{% block description %}
+    Get the geo locations of the vehicles of a certain line. <br>
+    <b>Parameters</b>
+    <ul>
+        <li>entity_number: integer</li>
+        <li>line_number: integer</li>
+        <li>direction: string; can only be 'HEEN' or 'TERUG'</li>
+    </ul>
+    <b>Return type</b>
+    <ul>
+        <li>First list item: latitude</li>
+        <li>Second list item: longitude</li>
+    </ul>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+URL: /vehicles/1/32/HEEN
+[
+  [51.15562, 4.43622],
+  [51.19465, 4.42364],
+  [51.21025, 4.41818]
+]
+{% endblock %}

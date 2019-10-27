@@ -1,0 +1,23 @@
+{% extends "APIBASE.html" %}
+{% set id = "getAllStops" %}
+{% block URL %}
+    /stops
+{% endblock %}
+{% block description %}
+    Will return all possible stops. This function will take ~40 seconds or more.<br>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+[
+    {
+        "number": "101000",
+        "villageName": "Wilrijk",
+        "desc": "A. Chantrainestraat",
+        "latlng": [
+        51.16388937021345,
+        4.392073389160737
+    ]
+    },
+    ...
+]
+{% endblock %}

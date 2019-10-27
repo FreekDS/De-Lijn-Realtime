@@ -1,0 +1,18 @@
+{% extends "APIBASE.html" %}
+{% set id = "getEntities" %}
+{% block URL %}
+/entities
+{% endblock %}
+{% block description %}
+    Get all the entities of De Lijn. Each entity has a number (the identifier of the entity) and a description. <br>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+[
+    {
+        "number": 1,
+        "desc": "Antwerpen"
+    },
+    ...
+]
+{% endblock %}

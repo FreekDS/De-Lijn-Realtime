@@ -1,0 +1,62 @@
+
+.navbar {
+    background-color: #363d42;
+    color: aliceblue;
+    margin-bottom: 0;
+}
+
+.my-nav {
+    color: aliceblue;
+}
+
+.API-resource {
+    background-color: rgb(139, 226, 50);
+    width: 40rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-top: 5rem;
+    height: 2.5rem;
+}
+
+.API {
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+
+
+.API-desc {
+    margin-left: 1vw;
+    padding-left: 1vw;
+    font-size: 1rem
+}
+
+.badge {
+    margin-right: 1rem
+}
+
+.API-URI {
+    align-items: center;
+    font-size: 1.5rem;
+    display: inline-flex;
+}
+
+.json-field {
+    display: none;
+}
+
+.JSON-response {
+    margin-bottom: 2rem;
+}
+
+.status-success {
+    color: #46e636;
+}
+
+.btn-light {
+    margin-top: 10px;
+}
+
+pre {
+    background-color: rgba(0,0,0,0.01);
+    width: 35rem;
+}

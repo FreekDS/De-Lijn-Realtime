@@ -1,0 +1,21 @@
+{% extends "APIBASE.html" %}
+{% set id = "getAllLines" %}
+{% block URL %}
+    /lines
+{% endblock %}
+{% block description %}
+    Will return all possible lines.<br>
+    If the function succeeds, the response code will be <span class="status-success">200</span>.
+{% endblock %}
+{% block example_response %}
+[
+    {
+        "number": 2,
+        "entityNumber": 1,
+        "desc": "Hoboken - P+R Merksem",
+        "type": "tram",
+        "serviceType": "normaal"
+    },
+    ...
+]
+{% endblock %}

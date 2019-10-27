@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="API-resource">
+                <div class="API-URI">
+                    <span class="badge badge-light">GET</span> {% block URL %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="API-desc">
+                {% block description %}{% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="API JSON-response">
+                <button type="button" class="btn btn-light" onclick="hideJson('{{ id }}')">JSON response</button>
+                <div id="{{ id }}" class="json-field">
+                        <pre>
+                            <code>
+{% block example_response %}
+{% endblock example_response %}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
