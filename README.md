@@ -225,7 +225,8 @@ For the routing part of this application, I chose for the TomTom Routing API. Fi
 The front-end is completely decoupled from the back-end. To demonstrate this, I didn't use Flask again for the front-end part, but I chose for a completely different framework. I picked the ReactJS framework because I already gained some experience with this last summer. I find it much cleaner to use a component based system instead of writing massive HTML and javascript files. Each component kind of stands on its own and this gives in my opinion a way better overview over the code. <br>
 The requests in the front-end are done by a library called Axios. This is a promise based HTTP client. I picked this library because, once again, I gained some experience with it last summer. I think Axios makes creating requests for webservers quite easy. <br>
 The map is created using LeafletJS. This library makes it very easy to add an OpenStreetMap based map to your webapplication. The documentation of this library is very useful and the library is straightforward to use. Things as markers and popups require not that much work. I also used the Leaflet-Routing-Machine extension. This Leaflet extension makes it easier to draw routes on your map. <br>
-Lastly, I used Bootstrap 4 to help with the CSS of this application. We used Bootstrap in a project last year, so this accelerated the development of the webservice.
+Lastly, I used Bootstrap 4 to help with the CSS of this application. We used Bootstrap in a project last year, so this accelerated the development of the webservice. <br>
+The weather only gets fetched from the API when a stop marker is clicked. The OpenWeatherMap API only allows 60 calls per minute. Using this method, the application does not generate API requests when no marker is clicked.
 
 ## Used tools
 #### Back-end
