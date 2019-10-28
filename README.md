@@ -1,5 +1,5 @@
-# De-Lijn-Realtime
-###### By Freek De Sagher S0171876
+# De Lijn Realtime
+###### By Freek De Sagher S0171876 <br> project for Distributed Systems 2019-2020
 
 ## Contents
 1. [Installation and running](#installation-and-running)
@@ -50,7 +50,7 @@ By default, the front end server will start on 127.0.0.1:3000
 
 
 ## Running the project
-Running the project is quite simple. The script start_frontend.sh starts the front-end server and the start_backend.sh file starts the back-end server. No sudo rights are required to run these scripts
+Running the project is quite simple. The script start_frontend.sh starts the front-end server and the start_backend.sh file starts the back-end server. No sudo rights are required to run these scripts. If you want to start the servers manually, you can look into the scripts. They both contain one line that also can be executed in the terminal without the use of the scripts.
 
 ## Configuration
 The back- and front-end both have a configuration file to set some global variables.
