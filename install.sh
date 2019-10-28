@@ -55,6 +55,6 @@ installNpm
 installPython
 installPip
 
-sudo pip3 -r ./WebServices/requirements.txt
+sudo pip3 install -r ./WebServices/requirements.txt
 sudo npm --prefix ./web-services-front/ install
 
