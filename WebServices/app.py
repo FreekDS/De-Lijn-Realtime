@@ -487,6 +487,8 @@ api.add_resource(WeatherChecker, "/weather/<lat>/<lon>")
 api.add_resource(GetVehicleLocations, "/vehicles/<entity_number>/<line_number>/<direction>")
 
 # TODO 404 page
+# TODO install script
+# TODO front end CSS
 
 if __name__ == '__main__':
     app.run(debug=True)

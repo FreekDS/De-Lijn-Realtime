@@ -45,6 +45,8 @@ export default class LineSelector extends Component {
     handleSubmit(event) {
         event.preventDefault();
         let regionValue = event.target.region.value;
+        if (regionValue === "Loading...")
+            return;
         let lineNumber = event.target.line.value;
         let direction = event.target.direction.value;
         this.props.selector(regionValue, lineNumber, direction);
@@ -52,33 +54,38 @@ export default class LineSelector extends Component {
 
     render() {
         const {entities} = this.state;
+        console.log(entities);
         const {loading} = this.props;
         const entityOptions = entities.map(entity => {
             return (<option key={entity.number} value={entity.number}>{entity.name}</option>);
         });
+        const loading_entities = (<option>Loading...</option>);
         return (
             <div className="col" onSubmit={this.handleSubmit}>
                 <form>
-                    <label>
-                        Region
-                        <select name="region">
-                            {entityOptions}
+                    <div className="form-group">
+                        <label>Region</label>
+                        <select name="region" id="selectInput" placeholder="Loading..." className="form-control"
+                                required>
+                            {entities.length !== 0 ? entityOptions : loading_entities}
                         </select>
-                    </label>
-                    <label>
-                        Line number
-                        <input type="number" name="line" id="line"/>
-                    </label>
-                    <label>
-                        Direction
-                        <select name="direction">
+                    </div>
+                    <div className="form-group">
+                        <label>Line number</label>
+                        <input type="number" min="1" name="line" id="line" placeholder="Enter number"
+                               className="form-control" required/>
+                    </div>
+                    <div className="form-group">
+                        <label>Direction</label>
+                        <select name="direction" className="form-control" required>
                             <option value="HEEN">Heen</option>
                             <option value="TERUG">Terug</option>
                         </select>
-                    </label>
-                    <button type="submit" disabled={loading}>Search</button>
+                    </div>
+                    <button type="submit" className="btn btn-dark" disabled={loading}>Search</button>
                 </form>
             </div>
-        );
+        )
+            ;
     }
 }
