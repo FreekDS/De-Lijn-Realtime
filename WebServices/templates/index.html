@@ -28,6 +28,13 @@
     <a class="navbar-brand" href="#"><p class="my-nav">De Lijn Real-Time API documentation</p></a>
 </nav>
 <div class="container">
+    {% if error %}
+        <div class="row">
+            <div class="alert alert-danger" role="alert">
+                Endpoint not found!
+            </div>
+        </div>
+    {% endif %}
     {% include "GetEntities.html" %}
     {% include "GetAllLines.html" %}
     {% include "GetVillages.html" %}

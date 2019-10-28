@@ -20,6 +20,12 @@ def documentation() -> Any:
     return render_template("index.html")
 
 
+@app.errorhandler(404)
+def error_404(e):
+    return render_template('index.html', error=True)
+
+
+
 class GetEntities(Resource):
     def get(self):
         """
@@ -487,7 +493,6 @@ api.add_resource(WeatherChecker, "/weather/<lat>/<lon>")
 api.add_resource(GetVehicleLocations, "/vehicles/<entity_number>/<line_number>/<direction>")
 
 # TODO 404 page
-# TODO install script
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
