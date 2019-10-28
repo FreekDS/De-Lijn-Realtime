@@ -2,16 +2,30 @@
 ###### By Freek De Sagher S0171876
 
 ## Contents
-1. [Installation](#installation)
-    1. [Back end](#back-end)
-    2. [Front end](#front-end)
+1. [Installation and running](#installation-and-running)
+    1. [Automatic installation](#automatic-installation)
+    2. [Manual installation](#manual-installation)
+        1. [Back end](#back-end)
+        2. [Front end](#front-end)
+    3. [Running the project](#running-the-project)
 2. [Configuration](#configuration)
 3. [API structure](#api-structure)
 4. [Design choices](#design-choices)
 5. [Used Tools](#used-tools)
 
 
-## Installation
+## Installation and running
+### Automatic installation
+This section explains how to install all the dependencies for both parts of the project using one script. If somehow this script fails, see [the next section](#manual-installation) for a detailed walktrough of a manual installation.
+
+The project can be installed using the install.sh script. This script requires sudo privileges to work.
+> sudo ./install.sh
+
+After installing, go to [this](#running-the-project) section for the information on how to start the back- and front-end server.
+
+### Manual installation
+Check this section if there were problems with the install script.
+
 #### Back-end
 The back-end of this application is built with Python and the [Flask](https://palletsprojects.com/p/flask/) framework. To install the project, navigate to the WebServices folder. To be able to install the back-end, Python 3 and pip are required. Install the requirements by running
 
@@ -19,9 +33,9 @@ The back-end of this application is built with Python and the [Flask](https://pa
 
 When this is done, the back-end server can be started with
 
-> python app.py
+> python app.py or python3 app.py
 
-The webserver will start on 127.0.0.1:5000 by default. Going to this page will show a brief documentation of the API. This documentation is also given in this document.
+The webserver will start on 127.0.0.1:5000 by default. Going to this address in the browser will show a brief documentation of the API. This documentation is also given in this document.
 
 #### Front-end
 The front-end of this application is built with the  [React](https://reactjs.org/) framework. To install this part of the project, go to web-services-front. To be able to install the front-end  [npm](https://www.npmjs.com/get-npm) is required. Once npm is installed, run
@@ -33,6 +47,10 @@ To start the development server run
 > npm run start
 
 By default, the front end server will start on 127.0.0.1:3000
+
+
+## Running the project
+Running the project is quite simple. The script start_frontend.sh starts the front-end server and the start_backend.sh file starts the back-end server. No sudo rights are required to run these scripts
 
 ## Configuration
 The back- and front-end both have a configuration file to set some global variables.
