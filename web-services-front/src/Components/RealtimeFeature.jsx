@@ -125,6 +125,3 @@ export default class RealtimeFeature extends Component {
         );
     }
 }
-
-// TODO CSS
-// TODO change bus/stop icon

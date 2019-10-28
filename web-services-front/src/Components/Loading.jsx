@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/loader.css'
 
 /**
  * Loading icon. Code found on https://loading.io/css/

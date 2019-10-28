@@ -62,6 +62,7 @@ export default class LineSelector extends Component {
         const loading_entities = (<option>Loading...</option>);
         return (
             <div className="col" onSubmit={this.handleSubmit}>
+                <h2 className="form-title">Search for a line</h2>
                 <form>
                     <div className="form-group">
                         <label>Region</label>

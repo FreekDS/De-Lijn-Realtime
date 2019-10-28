@@ -21,9 +21,9 @@ const markerTypes = {
     BUS: {
         name: "bus",
         icon: L.icon({
-            iconUrl: process.env.PUBLIC_URL + "bus.png",
-            iconSize: [38, 38],
-            iconAnchor: [19, 38]
+            iconUrl: process.env.PUBLIC_URL + "bus.svg",
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
         })
     }
 };
@@ -110,7 +110,7 @@ class OpenMap extends Component {
                 lng: obj.latlng[1]
             };
             let marker = L.marker(latlng, {icon: markerTypes.STOP.icon}).addTo(markerLayer);    // Create marker object
-            marker.bindPopup('<b>' + obj.desc.toString() + "</b>");                     // Bind popup to marker
+            marker.bindPopup('<b>' + obj.desc.toString() + "</b>", {autoClose: false}); // Bind popup to marker
             marker.on('click', () => {                                  // Add click listener
                 this.props.api.getWeather(obj.latlng)                            // On click: fetch weather and update
                     .then(res =>                                                 // and stop marker
@@ -160,8 +160,7 @@ class OpenMap extends Component {
             return;
         busLayer.clearLayers();
         for (const location of locations) {
-            let marker = L.marker({lat: location[0], lng: location[1]}, {icon: markerTypes.BUS.icon}).addTo(busLayer);
-            console.log("Added", marker)
+            L.marker({lat: location[0], lng: location[1]}, {icon: markerTypes.BUS.icon}).addTo(busLayer);
         }
     }
 
