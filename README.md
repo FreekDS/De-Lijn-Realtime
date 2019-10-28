@@ -16,12 +16,12 @@
 
 ## Installation and running
 ### Automatic installation
-This section explains how to install all the dependencies for both parts of the project using one script. If somehow this script fails, see [the next section](#manual-installation) for a detailed walktrough of a manual installation.
+This section explains how to install all the dependencies for both parts of the project using one script. If somehow this script fails, see [the mannual installation section](#manual-installation) for a detailed walktrough of a manual installation.
 
 The project can be installed using the install.sh script. This script requires sudo privileges to work.
 > sudo ./install.sh
 
-After installing, go to [this](#running-the-project) section for the information on how to start the back- and front-end server.
+After installing, go to the [Running the project](#running-the-project) section for the information on how to start the back- and front-end server.
 
 ### Manual installation
 Check this section if there were problems with the install script.
@@ -56,11 +56,17 @@ Running the project is quite simple. The script start_frontend.sh starts the fro
 The back- and front-end both have a configuration file to set some global variables.
 #### Back-end
 The back-end configuration file can be found in the WebServices directory and is called config.py. This configuration file has three entries:
+
 > DE_LIJN_API_KEY: the API key used for requests to the service of De Lijn
+
 <!-- -->
+
 > WEATHER_API_KEY: the API key used for requests to the weather service
+
 <!-- -->
+
 > TOMTOM_API_KEY: the API key used for requests to the TomTom Routing API.
+
 
 #### Front-end
 The configuration file config.jsx can be found in the source folder in the webservices-front directory. This configuration file has three entries:
