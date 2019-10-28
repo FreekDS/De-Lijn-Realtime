@@ -11,7 +11,7 @@ function installNpm() {
 		if hash npm 2>/dev/null; then
 			echo "Successfully installed npm"
 		else
-			echo "Cannot install npm, trying installing it manually"
+			echo "Cannot install npm, try installing it manually"
 			exit 1
 		fi
 	fi
@@ -22,8 +22,16 @@ function installPython() {
 	if hash python3 2>/dev/null; then
 		echo "python3 is already installed"
 	else
-		echo "Python3 is not installed"
-		exit 1
+		echo "Python3 is not installed, installing..."
+		sudo apt install software-properties-common
+		sudo add-apt-repository ppa:deadsnakes/ppa
+		sudo apt install python3.7
+		if hash python3 2>/div/null; then
+			echo "Python3 has been installed"
+		else
+			echo "Cannot install python3, try installing it manually"
+			exit 1
+		fi
 	fi
 }
 
@@ -43,4 +51,10 @@ function installPip() {
 	fi
 }
 
+installNpm
 installPython
+installPip
+
+sudo pip3 -r ./WebServices/requirements.txt
+sudo npm --prefix ./web-services-front/ install
+
