@@ -488,7 +488,6 @@ api.add_resource(GetVehicleLocations, "/vehicles/<entity_number>/<line_number>/<
 
 # TODO 404 page
 # TODO install script
-# TODO front end CSS
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
