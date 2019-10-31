@@ -25,7 +25,7 @@ function installPython() {
 		echo "Python3 is not installed, installing..."
 		sudo apt install software-properties-common
 		sudo add-apt-repository ppa:deadsnakes/ppa
-		sudo apt install python3.7
+		sudo apt install python3.7 -y
 		if hash python3 2>/div/null; then
 			echo "Python3 has been installed"
 		else
@@ -41,7 +41,7 @@ function installPip() {
 		echo "Pip3 is already installed"
 	else
 		echo "Pip is not installed, installing..."
-		sudo apt install python3-pip
+		sudo apt install python3-pip -y
 		if hash pip3 2>/dev/null; then
 			echo "Successfully installed pip3"
 		else 
@@ -55,6 +55,8 @@ installNpm
 installPython
 installPip
 
-sudo pip3 install -r ./WebServices/requirements.txt
 sudo npm --prefix ./web-services-front/ install
+cd ./WebServices
+sudo pip3 install -r requirements.txt
+
 
